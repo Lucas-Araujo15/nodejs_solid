@@ -11,6 +11,10 @@ class ShowUserProfileUseCase {
     execute({ user_id }: IRequest): User {
         const user = this.usersRepository.findById(user_id);
 
+        if (user === undefined) {
+            throw new Error("Non-existing user");
+        }
+
         return user;
     }
 }
