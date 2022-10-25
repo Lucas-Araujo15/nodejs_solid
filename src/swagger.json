@@ -1,0 +1,50 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Node.js with SOLID - Documentation",
+        "description": "Application developed to train the concepts learned about Node.js, implementing the SOLID principles.",
+        "version": "1.0.0",
+        "contact": {
+            "email": "lucasaraujo4188@gmail.com"
+        }
+    },
+    "paths": {
+        "/users": {
+            "post": {
+                "tags": [
+                    "User"
+                ],
+                "summary": "Create a new user",
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "name": {
+                                        "type": "string"
+                                    },
+                                    "email": {
+                                        "type": "string"
+                                    }
+                                },
+                                "example": {
+                                    "name": "John Doe",
+                                    "email": "johndoe@email.com"
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Created"
+                    },
+                    "400": {
+                        "description": "Email is already taken"
+                    }
+                }
+            }
+        }
+    }
+}
